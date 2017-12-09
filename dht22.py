@@ -10,23 +10,3 @@ connection = pymysql.connect(host='192.168.1.73',
 
 print ("connect successful!!")
 
-try:
-
-    with connection.cursor() as cursor:
-
-        # SQL
-        sql = "SELECT * FROM th_data "
-
-        # Execute query.
-        cursor.execute(sql)
-
-        print ("cursor.description: ", cursor.description)
-
-        print()
-
-        for row in cursor:
-            print(row)
-
-finally:
-    # Close connection.
-    connection.close()
