@@ -1,10 +1,10 @@
 import pymysql.cursors
 
 # Connect to the database.
-connection = pymysql.connect(host='192.168.1.73',
-                             user='roberto',
+connection = pymysql.connect(host='localhost',
+                             user='pi',
                              password='marte2122',
-                             db='dht22_alan',
+                             db='TempHumDB',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
