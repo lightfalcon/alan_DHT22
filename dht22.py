@@ -51,7 +51,7 @@ try:
 
                 # Delay 10 segundos
                 time.sleep(10)
-except Exception:
-    print("Error")
+except Exception as e:
+    print("Error", e.args)
 
 
