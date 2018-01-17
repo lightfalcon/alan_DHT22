@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+#!/usr/bin/python
+
 #Importando librerias necesarias
 import sys
 import pymysql.cursors
 import time
 import datetime
-from Adafruit_Python_DHT import Adafruit_DHT
+import Adafruit_DHT
 
 #Importando configuracion general
 from config import *
