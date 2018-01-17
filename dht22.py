@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 #Importando librerias necesarias
+import sys
 import pymysql.cursors
 import time
 import datetime
