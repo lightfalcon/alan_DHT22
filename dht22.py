@@ -4,7 +4,7 @@ import sys
 import pymysql.cursors
 import time
 import datetime
-import Adafruit_DHT
+from Adafruit_Python_DHT import Adafruit_DHT
 
 #Importando configuracion general
 from config import *
