@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 #Importando librerias necesarias
 import sys
 import pymysql.cursors
