@@ -2,7 +2,6 @@
 
 #Importando librerias necesarias
 import sys
-#import pymysql.cursors
 import MySQLdb
 import time
 import datetime
@@ -16,17 +15,10 @@ sensor = Adafruit_DHT.DHT22
 
 #Metodo para insertar un nuevo registro en la base de datos MariaDB
 def insertDataToDB(temperatura, humedad):
-#        connection = pymysql.connect(host=MYSQL_SERVIDOR,
-#                               user=MYSQL_USUARIO,
-#                               password=MYSQL_CONTRASENA,
-#                               db=MYSQL_BD,
-#                               charset='utf8mb4',
-#                               cursorclass=pymysql.cursors.DictCursor)
-
         connection = MySQLdb.connect(host=MYSQL_SERVIDOR,
-						user=MYSQL_USUARIO,
-						passwd=MYSQL_CONTRASENA,
-						db=MYSQL_BD)
+                        user=MYSQL_USUARIO,
+                        passwd=MYSQL_CONTRASENA,
+                        db=MYSQL_BD)
 
         try:
             with connection.cursor() as cursor:
@@ -48,15 +40,15 @@ try:
                 #Obtiene la humedad y la temperatura desde el sensor
                 humedad, temperatura = Adafruit_DHT.read_retry(sensor, pin)
 
-                #Si se obtiene lectura, registrar en log (pending)
+                #Si se obtiene lectura, registrar en log (pending task)
 
                 #Si se obtiene lectura del sensor, crear un nuevo registro en la BD
                 if humedad is not None and temperatura is not None:
                         insertDataToDB(temperatura,humedad)
                 else:
-                        print("Ha ocurrido un error")
+                        print("Ha ocurrido un error")#Mejorar mensajes de log
 
-                # Delay 10 segundos
+                #Delay 10 segundos
                 time.sleep(10)
 except Exception:
     print("Error")
